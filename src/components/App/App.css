@@ -1,9 +1,17 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height:100vh;
+  position: relative;
 }
 
-.ai-heading {
-  align-items: flex-start;
+.App-container {
+  position: relative;
+  top: 25%;
+  left: 25%;
+  transform: translateY(-25%);
+}
+
+.App-heading {
+  font-size:xx-large;
+  font-weight:700;
+  margin-bottom: 0.5%;
 }

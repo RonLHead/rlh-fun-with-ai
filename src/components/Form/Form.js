@@ -24,7 +24,7 @@ class Form extends Component {
     render() {
         return(
             <form>
-                <p>Enter prompt</p>
+                <p className='prompt-heading'>Enter prompt</p>
                 <div className='input-container'>
                     <textarea 
                         className='prompt-input'
@@ -33,9 +33,11 @@ class Form extends Component {
                         value={this.setState.prompt}
                         onChange={e => this.handleChange(e)}
                     />
+                <div className='button-container'>
                     <button className='submit-button' onClick={e => this.handleSubmit(e)}>
                         Submit
                     </button>
+                </div>
                 </div>
             </form>
         )

@@ -1,16 +1,16 @@
 import React from 'react';
-// import Form from '../Form/Form';
+import Form from '../Form/Form';
 import './App.css';
 
 function App() {
   return (
     <main className='App'>
-      <header >  
-          <h1 >Fun with AI</h1>
-      </header>
-      <p>
-        Form goes here
-      </p>
+      <section className='App-container'>
+        <header>  
+            <h1 className='App-heading'>Fun with AI</h1>
+        </header>
+        <Form />
+      </section>
     </main>
   );
 }
