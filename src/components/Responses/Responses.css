@@ -1,0 +1,11 @@
+.Responses-heading {
+  /* font-size: larger; */
+}
+
+.Responses-section {
+  background: #EEEEEE;
+  border-radius: 8px;
+  width: 50vw;
+  height: 30vh;
+  padding: 2%;
+}
