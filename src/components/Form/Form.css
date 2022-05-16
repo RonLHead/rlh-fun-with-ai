@@ -5,13 +5,21 @@
 
 .prompt-heading {
   font-weight: bolder;
+  margin-bottom: 0.5%;
 }
 
 .prompt-input {
   width: 50vw;
   height: 40vh;
   border-radius: 10px;
-  border-color: black;
+  border: 2px solid lightgray;
+  padding: 1%;
+}
+
+.prompt-input:focus {
+  outline: none !important;
+  border: none;
+  box-shadow: 0 0 10px gray;
 }
 
 .button-container {
