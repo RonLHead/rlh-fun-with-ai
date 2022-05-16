@@ -7,7 +7,7 @@ function App() {
     <main className='App'>
       <section className='App-container'>
         <header>  
-            <h1>Fun with AI</h1>
+            <h1 className='App-heading'>Fun with AI</h1>
         </header>
         <Form />
       </section>
