@@ -1,5 +1,4 @@
 .App {
- 
   height:100vh;
   position: relative;
 }
@@ -9,4 +8,8 @@
   top: 25%;
   left: 25%;
   transform: translateY(-25%);
+}
+
+.App-heading {
+  font-size:xx-large;
 }
