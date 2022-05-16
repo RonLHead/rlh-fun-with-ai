@@ -1,6 +1,5 @@
 import React from 'react';
-import Form from '../Form/Form';
-import Responses from '../Responses/Responses';
+// import Form from '../Form/Form';
 import './App.css';
 
 function App() {
@@ -9,8 +8,9 @@ function App() {
       <header >  
           <h1 >Fun with AI</h1>
       </header>
-      <Form />
-      <Responses />
+      <p>
+        Form goes here
+      </p>
     </main>
   );
 }
