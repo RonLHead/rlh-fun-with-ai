@@ -1,0 +1,32 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-heading {
+  font-weight: bolder;
+}
+
+.prompt-input {
+  width: 50vw;
+  height: 40vh;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.button-container {
+  display: flex;
+  position: relative;
+  left: 40%;
+  margin-top: 1%;
+}
+
+.submit-button {
+  background-color: blue;
+  color: white;
+  border: 0;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 7px;
+  font-weight: bold;
+}
