@@ -1,11 +1,19 @@
-.Responses-heading {
-  /* font-size: larger; */
-}
-
 .Responses-section {
+  display: flex;
   background: #EEEEEE;
   border-radius: 8px;
   width: 50vw;
   height: 30vh;
   padding: 2%;
 }
+
+.sub-heading, .Responses-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-heading {
+  font-weight: bold;
+  margin-right: 10%;
+}
+
