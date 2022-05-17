@@ -1,3 +1,5 @@
+const key = process.env.REACT_APP_API_KEY
+
 export const fetchOpenAi = (prompt) => {
   const data = {
     prompt: prompt,
@@ -12,7 +14,7 @@ export const fetchOpenAi = (prompt) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      "Authorization": `Bearer ${key}`,
     },
     body: JSON.stringify(data),
   }).then(response => {
