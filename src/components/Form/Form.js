@@ -1,47 +1,57 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { fetchOpenAi } from '../../apiCalls';
 import './Form.css';
 
-class Form extends Component {
-    constructor() {
-        super();
-        this.state = {
-            prompt: ''
-        }
+const Form =({ setResponses }) => {
+    const [prompt, setPrompt] = useState('');
+    const [error, setError] = useState('')
+   
+    const handleChange = e => {
+        setPrompt(e.target.value);
     }
 
-    handleChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
-
-    handleSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
-        this.clearInput();
+        capturePrompt()
+        clearInput();
     }
 
-    clearInput = () => {
-        this.setState({ prompt: '' })
+    const capturePrompt = (prompt) => {
+        fetchOpenAi(prompt)
+            .then(data => {
+                setResponses(prevResponses => [{
+                    prompt: prompt,
+                    response: data.choices[0].text,
+                    key: Date.now(),
+                }, ...prevResponses])
+            })
+            .catch(error => setError(error))
     }
-    render() {
-        return(
-            <form>
-                <p className='prompt-heading'>Enter prompt</p>
-                <div className='input-container'>
-                    <textarea 
-                        className='prompt-input'
-                        name='form'
-                        type='text'
-                        value={this.setState.prompt}
-                        onChange={e => this.handleChange(e)}
-                    />
-                <div className='button-container'>
-                    <button className='submit-button' onClick={e => this.handleSubmit(e)}>
-                        Submit
-                    </button>
-                </div>
-                </div>
-            </form>
-        )
+
+    const clearInput = () => {
+        setPrompt('')
     }
+
+    return(
+        <form>
+            <p className='prompt-heading'>Enter prompt</p>
+            <div className='input-container'>
+                <textarea 
+                    className='prompt-input'
+                    name='form'
+                    type='text'
+                    value={prompt}
+                    onChange={e => handleChange(e)}
+                />
+                {error && <p>{error}</p>}
+            <div className='button-container'>
+                <button className='submit-button' onClick={e => handleSubmit(e)}>
+                    Submit
+                </button>
+            </div>
+            </div>
+        </form>
+    )
 }
 
 export default Form;
